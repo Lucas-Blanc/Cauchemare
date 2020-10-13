@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,11 +14,19 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    private int page = 0;
+    private GameObject pagePickedUp;
 
     Vector3 velocity;
     bool isGrounded;
 
-    void Update()
+
+    private void Start()
+    {
+
+    }
+
+    private void FixedUpdate()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
@@ -41,6 +50,30 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            Destroy(gameObject);
+            SceneManager.LoadScene("GameOver");
+        }
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Porte") && page >= 0)
+        {
+            SceneManager.LoadScene("Menu");
+        }
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Page")
+        {
+            print("Page: " + page);
+            pagePickedUp = other.gameObject;
+            page += 1;
+            Destroy(pagePickedUp);
+        }
+        
 
     }
 }
