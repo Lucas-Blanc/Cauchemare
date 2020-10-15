@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public Transform Target;
+    public Transform target;
     public UnityEngine.AI.NavMeshAgent agent;
 
     void Start()
@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        agent.destination = Target.position;
+        agent.destination = target.position;
     }
+    
 }

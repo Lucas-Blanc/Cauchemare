@@ -684,7 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffacfe28a6275d34186d8eee8993a480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 824863716}
+  target: {fileID: 824863716}
   agent: {fileID: 789339502}
 --- !u!136 &789339504
 CapsuleCollider:
@@ -1605,7 +1605,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435197202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.228784, y: 2.08, z: 6.7}
+  m_LocalPosition: {x: -7.45, y: 2.1, z: 6.7}
   m_LocalScale: {x: 2.3091, y: 2.3091, z: 2.3091}
   m_Children: []
   m_Father: {fileID: 0}

@@ -13,6 +13,8 @@ public class RetryMenu : MonoBehaviour
                 if (Input.anyKey)
                 Cursor.lockState = CursorLockMode.None;
         }
+
+
     public void Retry()
     {
         SceneManager.LoadScene("PrototypeScene");

@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             SceneManager.LoadScene("GameOver");
         }
         if (collision.gameObject.layer == LayerMask.NameToLayer("Porte") && page >= 0)
