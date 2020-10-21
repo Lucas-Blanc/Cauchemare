@@ -15,12 +15,12 @@ public class Heartbeat : MonoBehaviour
     void Update()
     {
         Distance = Vector3.Distance(GameObject.transform.position, enemy.transform.position);
-        if (Vector3.Distance(GameObject.transform.position, enemy.transform.position) <= 35 && !GetComponent<AudioSource>().isPlaying)
+        if (Vector3.Distance(GameObject.transform.position, enemy.transform.position) <= 60 && !GetComponent<AudioSource>().isPlaying)
         {
             GetComponent<AudioSource>().clip = heartbeat;
             GetComponent<AudioSource>().Play(); 
         }
-        if (Vector3.Distance(GameObject.transform.position, enemy.transform.position) > 35 )
+        if (Vector3.Distance(GameObject.transform.position, enemy.transform.position) > 60 )
         {
             GetComponent<AudioSource>().clip = heartbeat;
             GetComponent<AudioSource>().Stop();

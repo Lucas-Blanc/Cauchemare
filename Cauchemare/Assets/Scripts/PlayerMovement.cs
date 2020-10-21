@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
             //Destroy(gameObject);
             SceneManager.LoadScene("GameOver");
         }
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Porte") && page >= 0)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Porte") && page >= 10)
         {
             SceneManager.LoadScene("Menu");
         }
