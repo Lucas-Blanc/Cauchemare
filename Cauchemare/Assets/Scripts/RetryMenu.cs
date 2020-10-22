@@ -17,7 +17,7 @@ public class RetryMenu : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene("PrototypeScene");
+        SceneManager.LoadScene("Niveau1");
     }
 
     public void Quit()
